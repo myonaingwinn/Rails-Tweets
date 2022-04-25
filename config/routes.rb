@@ -6,4 +6,7 @@ Rails.application.routes.draw do
 
   root "main#index"
   get "about-us", to: "about#index", as: :about
+  get "sign_up", to: "registeration#new"
+  post "register", to: "registeration#create"
+
 end
