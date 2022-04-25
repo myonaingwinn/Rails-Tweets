@@ -1,8 +1,7 @@
 <div class="d-flex align-items-center justify-content-center">
   <h1>Home</h1>
-  <% if @user %>
-    <%# <div class="mt-4"> %>
-    Logged in as : <%= @user.email %>
-    <%# </div> %>
-  <% end %>
 </div>
+<% if @user %>
+  Logged in as : <%= @user.email %>
+  <%= button_to "Logout", logout_path, method: :delete, class: 'btn btn-danger' %>
+<% end %>
