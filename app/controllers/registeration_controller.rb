@@ -6,9 +6,10 @@ class RegisterationController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      session[:user_id] = @user.id
       redirect_to root_path, notice: "Successfully created account"
     else
-      redirect_to sign_up_path#, alert: "Something is wrong, check your input!"
+      redirect_to sign_up_path #, alert: "Something is wrong, check your input!"
     end
   end
 
